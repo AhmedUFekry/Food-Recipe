@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		AB6B2B542A7DB7120070F474 /* RciepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B532A7DB7120070F474 /* RciepsViewController.swift */; };
 		AB6B2B562A7DBEC20070F474 /* ReciepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B552A7DBEC20070F474 /* ReciepsTableViewCell.swift */; };
+		AB6B2B5C2A7EC7980070F474 /* ReciepsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B5B2A7EC7980070F474 /* ReciepsDetailsViewController.swift */; };
+		AB6B2B5E2A7ECD220070F474 /* RecipsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B5D2A7ECD220070F474 /* RecipsDataModel.swift */; };
+		AB6B2B602A7ECEDB0070F474 /* RecipsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B5F2A7ECEDB0070F474 /* RecipsNetworkManager.swift */; };
+		AB6B2B622A7EDDBD0070F474 /* RecievingRecips.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B612A7EDDBD0070F474 /* RecievingRecips.swift */; };
 		ABE55FAE2A7BE936000918EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE55FAD2A7BE936000918EB /* AppDelegate.swift */; };
 		ABE55FB02A7BE936000918EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE55FAF2A7BE936000918EB /* SceneDelegate.swift */; };
 		ABE55FB22A7BE936000918EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE55FB12A7BE936000918EB /* ViewController.swift */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		AB6B2B532A7DB7120070F474 /* RciepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RciepsViewController.swift; sourceTree = "<group>"; };
 		AB6B2B552A7DBEC20070F474 /* ReciepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciepsTableViewCell.swift; sourceTree = "<group>"; };
+		AB6B2B5B2A7EC7980070F474 /* ReciepsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciepsDetailsViewController.swift; sourceTree = "<group>"; };
+		AB6B2B5D2A7ECD220070F474 /* RecipsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipsDataModel.swift; sourceTree = "<group>"; };
+		AB6B2B5F2A7ECEDB0070F474 /* RecipsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipsNetworkManager.swift; sourceTree = "<group>"; };
+		AB6B2B612A7EDDBD0070F474 /* RecievingRecips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecievingRecips.swift; sourceTree = "<group>"; };
 		ABE55FAA2A7BE936000918EB /* Recipes App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipes App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE55FAD2A7BE936000918EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE55FAF2A7BE936000918EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +93,7 @@
 		AB6B2B482A7DB3700070F474 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AB6B2B572A7EC7250070F474 /* Recieps Details Screen */,
 				AB6B2B4F2A7DB6950070F474 /* Recieps Screen */,
 				AB6B2B4B2A7DB3F70070F474 /* Login Screen */,
 			);
@@ -155,6 +164,7 @@
 		AB6B2B502A7DB6B70070F474 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AB6B2B612A7EDDBD0070F474 /* RecievingRecips.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -169,6 +179,40 @@
 			sourceTree = "<group>";
 		};
 		AB6B2B522A7DB6CA0070F474 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B2B5D2A7ECD220070F474 /* RecipsDataModel.swift */,
+				AB6B2B5F2A7ECEDB0070F474 /* RecipsNetworkManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB6B2B572A7EC7250070F474 /* Recieps Details Screen */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B2B5A2A7EC7580070F474 /* Model */,
+				AB6B2B592A7EC7510070F474 /* View */,
+				AB6B2B582A7EC7470070F474 /* ViewModel */,
+			);
+			path = "Recieps Details Screen";
+			sourceTree = "<group>";
+		};
+		AB6B2B582A7EC7470070F474 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AB6B2B592A7EC7510070F474 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B2B5B2A7EC7980070F474 /* ReciepsDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB6B2B5A2A7EC7580070F474 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -356,11 +400,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABE55FB22A7BE936000918EB /* ViewController.swift in Sources */,
+				AB6B2B5E2A7ECD220070F474 /* RecipsDataModel.swift in Sources */,
+				AB6B2B622A7EDDBD0070F474 /* RecievingRecips.swift in Sources */,
+				AB6B2B5C2A7EC7980070F474 /* ReciepsDetailsViewController.swift in Sources */,
 				AB6B2B542A7DB7120070F474 /* RciepsViewController.swift in Sources */,
 				ABE55FAE2A7BE936000918EB /* AppDelegate.swift in Sources */,
 				AB6B2B562A7DBEC20070F474 /* ReciepsTableViewCell.swift in Sources */,
 				ABE55FB02A7BE936000918EB /* SceneDelegate.swift in Sources */,
 				ABE55FB82A7BE936000918EB /* Recipes_App.xcdatamodeld in Sources */,
+				AB6B2B602A7ECEDB0070F474 /* RecipsNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
