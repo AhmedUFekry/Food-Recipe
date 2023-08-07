@@ -63,6 +63,10 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="35f-HZ-Hq0"/>
+                    <connections>
+                        <outlet property="password" destination="uC7-ca-giR" id="med-jE-e3d"/>
+                        <outlet property="userName" destination="djD-YO-R9g" id="OKH-NI-fmU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

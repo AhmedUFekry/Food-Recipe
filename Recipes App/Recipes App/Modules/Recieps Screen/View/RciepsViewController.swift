@@ -55,7 +55,8 @@ class RciepsViewController: UIViewController  {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.recipsTableView.reloadData()
+       self.recipsTableView.reloadData()
+
     }
     
 
@@ -99,7 +100,11 @@ extension RciepsViewController : UITableViewDelegate , UITableViewDataSource {
         }
         cell.reciepTimeLabel.text = recipsArr?[indexPath.row].time
         // save favourite button state
-        var favRecips = CoreDataManager.fetchFromCoreData()
+        let favRecips = CoreDataManager.fetchFromCoreData()
+        if favRecips.count == 0 {
+            cell.addToFavouritsButton.isSelected = false
+            cell.addToFavouritsButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
         for favRecip in favRecips {
             if recipsArr?[indexPath.row].id == favRecip.id {
                 cell.addToFavouritsButton.isSelected = true
