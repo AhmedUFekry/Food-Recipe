@@ -16,8 +16,7 @@ class CoreDataManager {
     static var appDelegate : AppDelegate?
     
     
-    static func saveToCoreData(ratings : Int32 , descriptione: String , headline : String , id :String , image : String , name : String , time : String , ingredients : [String])
-    {
+    static func saveToCoreData(ratings : Int32 , descriptione: String , headline : String , id :String , image : String , name : String , time : String , ingredients : [String]){
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         
         context = appDelegate?.persistentContainer.viewContext

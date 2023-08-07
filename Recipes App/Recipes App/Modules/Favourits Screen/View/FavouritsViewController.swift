@@ -9,6 +9,7 @@ import UIKit
 
 class FavouritsViewController: UIViewController {
 
+    @IBOutlet weak var emptyFavImageView: UIImageView!
     @IBOutlet weak var favTableView: UITableView!
     var FavRecipViewModel : FavouritsViewModel?
     var favouritsArr: [Recips]?
@@ -26,6 +27,8 @@ class FavouritsViewController: UIViewController {
         FavRecipViewModel?.getLovedRecips()
         if favouritsArr?.count == 0 {
             self.favTableView.isHidden = true
+            self.emptyFavImageView.image = UIImage(named: "fav")
+            
         }
     }
     
