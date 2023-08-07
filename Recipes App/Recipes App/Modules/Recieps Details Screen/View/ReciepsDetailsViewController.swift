@@ -15,7 +15,8 @@ class ReciepsDetailsViewController: UIViewController {
     var timeLabelHolder : String?
     var headlineTextViewHolder : String?
     var descriptionTextViewHolder : String?
-    var ingrediantsTextViewHolder : String?
+    var ingrediantsTextViewHolder : [String]?
+    var idHolder : String?
     
     
     
@@ -34,14 +35,18 @@ class ReciepsDetailsViewController: UIViewController {
     @IBOutlet weak var addToFavouritsButton: UIButton!
     
     @IBAction func addToFavouritsButton(_ sender: Any) {
+        if self.addToFavouritsButton.isSelected == false{
+            self.addToFavouritsButton.isSelected = true
+        }else {
+            self.addToFavouritsButton.isSelected = false
+        }
         
         if addToFavouritsButton.isSelected == true {
-            self.addToFavouritsButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            self.addToFavouritsButton.isSelected = false
-        }else {
             self.addToFavouritsButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            self.addToFavouritsButton.isSelected = true
-            
+            CoreDataManager.saveToCoreData(ratings: Int32((ratingLabelHolder! as NSString).intValue), descriptione:descriptionTextViewHolder! , headline: headlineTextViewHolder! , id: idHolder!, image: recipImageViewHolder ?? "place", name: recipNameLabelHolder!, time: timeLabelHolder!, ingredients: ingrediantsTextViewHolder!)
+        }else {
+            self.addToFavouritsButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            CoreDataManager.deleteFromCoreData(recipeID: idHolder!)
         }
         
     }
@@ -55,6 +60,16 @@ class ReciepsDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var favRecips = CoreDataManager.fetchFromCoreData()
+        for currentRecip in favRecips {
+            if  idHolder == currentRecip.id {
+                self.addToFavouritsButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                self.addToFavouritsButton.isSelected = true
+                break
+            }
+        }
+        
         recipNameLabel.text = self.recipNameLabelHolder
         //Image********************
         if self.ratingLabelHolder != "0"{
@@ -66,7 +81,7 @@ class ReciepsDetailsViewController: UIViewController {
         timeLabel.text = self.timeLabelHolder
         headlineTextView.text = self.headlineTextViewHolder
         descriptionTextView.text = self.headlineTextViewHolder
-        ingrediantsTextView.text = self.ingrediantsTextViewHolder
+        ingrediantsTextView.text = self.ingrediantsTextViewHolder?.description
         
         
         // Do any additional setup after loading the view.

@@ -13,6 +13,10 @@
 		AB6B2B5E2A7ECD220070F474 /* RecipsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B5D2A7ECD220070F474 /* RecipsDataModel.swift */; };
 		AB6B2B602A7ECEDB0070F474 /* RecipsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B5F2A7ECEDB0070F474 /* RecipsNetworkManager.swift */; };
 		AB6B2B622A7EDDBD0070F474 /* RecievingRecips.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B612A7EDDBD0070F474 /* RecievingRecips.swift */; };
+		ABAFFDD62A814A7900E44CF2 /* CoreDataOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFFDD52A814A7900E44CF2 /* CoreDataOperator.swift */; };
+		ABAFFDDC2A8179D100E44CF2 /* FavouritsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFFDDB2A8179D100E44CF2 /* FavouritsViewController.swift */; };
+		ABAFFDDE2A817BF700E44CF2 /* FavouritsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFFDDD2A817BF700E44CF2 /* FavouritsTableViewCell.swift */; };
+		ABAFFDE22A817CBF00E44CF2 /* FavouritsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFFDE12A817CBF00E44CF2 /* FavouritsViewModel.swift */; };
 		ABE55FAE2A7BE936000918EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE55FAD2A7BE936000918EB /* AppDelegate.swift */; };
 		ABE55FB02A7BE936000918EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE55FAF2A7BE936000918EB /* SceneDelegate.swift */; };
 		ABE55FB22A7BE936000918EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE55FB12A7BE936000918EB /* ViewController.swift */; };
@@ -49,6 +53,10 @@
 		AB6B2B5D2A7ECD220070F474 /* RecipsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipsDataModel.swift; sourceTree = "<group>"; };
 		AB6B2B5F2A7ECEDB0070F474 /* RecipsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipsNetworkManager.swift; sourceTree = "<group>"; };
 		AB6B2B612A7EDDBD0070F474 /* RecievingRecips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecievingRecips.swift; sourceTree = "<group>"; };
+		ABAFFDD52A814A7900E44CF2 /* CoreDataOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataOperator.swift; sourceTree = "<group>"; };
+		ABAFFDDB2A8179D100E44CF2 /* FavouritsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsViewController.swift; sourceTree = "<group>"; };
+		ABAFFDDD2A817BF700E44CF2 /* FavouritsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsTableViewCell.swift; sourceTree = "<group>"; };
+		ABAFFDE12A817CBF00E44CF2 /* FavouritsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsViewModel.swift; sourceTree = "<group>"; };
 		ABE55FAA2A7BE936000918EB /* Recipes App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipes App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE55FAD2A7BE936000918EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE55FAF2A7BE936000918EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +101,7 @@
 		AB6B2B482A7DB3700070F474 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABAFFDD72A81798A00E44CF2 /* Favourits Screen */,
 				AB6B2B572A7EC7250070F474 /* Recieps Details Screen */,
 				AB6B2B4F2A7DB6950070F474 /* Recieps Screen */,
 				AB6B2B4B2A7DB3F70070F474 /* Login Screen */,
@@ -183,6 +192,7 @@
 			children = (
 				AB6B2B5D2A7ECD220070F474 /* RecipsDataModel.swift */,
 				AB6B2B5F2A7ECEDB0070F474 /* RecipsNetworkManager.swift */,
+				ABAFFDD52A814A7900E44CF2 /* CoreDataOperator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +223,40 @@
 			sourceTree = "<group>";
 		};
 		AB6B2B5A2A7EC7580070F474 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABAFFDD72A81798A00E44CF2 /* Favourits Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ABAFFDDA2A8179AF00E44CF2 /* Model */,
+				ABAFFDD92A8179A800E44CF2 /* View */,
+				ABAFFDD82A81799C00E44CF2 /* ViewModel */,
+			);
+			path = "Favourits Screen";
+			sourceTree = "<group>";
+		};
+		ABAFFDD82A81799C00E44CF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABAFFDE12A817CBF00E44CF2 /* FavouritsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABAFFDD92A8179A800E44CF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABAFFDDB2A8179D100E44CF2 /* FavouritsViewController.swift */,
+				ABAFFDDD2A817BF700E44CF2 /* FavouritsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABAFFDDA2A8179AF00E44CF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -405,8 +449,12 @@
 				AB6B2B5C2A7EC7980070F474 /* ReciepsDetailsViewController.swift in Sources */,
 				AB6B2B542A7DB7120070F474 /* RciepsViewController.swift in Sources */,
 				ABE55FAE2A7BE936000918EB /* AppDelegate.swift in Sources */,
+				ABAFFDE22A817CBF00E44CF2 /* FavouritsViewModel.swift in Sources */,
+				ABAFFDDC2A8179D100E44CF2 /* FavouritsViewController.swift in Sources */,
 				AB6B2B562A7DBEC20070F474 /* ReciepsTableViewCell.swift in Sources */,
+				ABAFFDDE2A817BF700E44CF2 /* FavouritsTableViewCell.swift in Sources */,
 				ABE55FB02A7BE936000918EB /* SceneDelegate.swift in Sources */,
+				ABAFFDD62A814A7900E44CF2 /* CoreDataOperator.swift in Sources */,
 				ABE55FB82A7BE936000918EB /* Recipes_App.xcdatamodeld in Sources */,
 				AB6B2B602A7ECEDB0070F474 /* RecipsNetworkManager.swift in Sources */,
 			);

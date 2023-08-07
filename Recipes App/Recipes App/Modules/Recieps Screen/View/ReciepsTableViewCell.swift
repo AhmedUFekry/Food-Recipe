@@ -24,17 +24,22 @@ class ReciepsTableViewCell: UITableViewCell {
  
     @IBOutlet weak var addToFavouritsButton: UIButton!
     
+    var favRecipe:(()->())?
     
     @IBAction func addToFavouritsButtonBehavior(_ sender: Any) {
-        
-        if addToFavouritsButton.isSelected == true {
-            self.addToFavouritsButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            self.addToFavouritsButton.isSelected = false
+        favRecipe?()
+        /*  if addToFavouritsButton.isSelected == false{
+            addToFavouritsButton.isSelected = true
         }else {
-            self.addToFavouritsButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            self.addToFavouritsButton.isSelected = true
-            
+            addToFavouritsButton.isSelected = false
         }
+        if addToFavouritsButton.isSelected == true {
+            self.addToFavouritsButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }else {
+            self.addToFavouritsButton.setImage(UIImage(systemName: "heart"), for: .normal)
+           
+            
+        }*/
         
         
     }

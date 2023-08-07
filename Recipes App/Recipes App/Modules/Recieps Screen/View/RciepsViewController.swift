@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreData
+//import CoreDataManager.swift
 
 class RciepsViewController: UIViewController  {
 
@@ -17,9 +19,16 @@ class RciepsViewController: UIViewController  {
     }
     
     @IBAction func favouritsButton(_ sender: Any) {
+        let favouritsVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouritsViewController") as! FavouritsViewController
+        
+        self.navigationController?.pushViewController(favouritsVC, animated: true)
         
         
     }
+
+
+    
+    
     
     var recipsViewModelObject : RecipsViewModel?
     var recipsArr : [Recips]?
@@ -42,7 +51,11 @@ class RciepsViewController: UIViewController  {
         recipsViewModelObject?.getAllRecips()
         
 
-        // Do any additional setup after loading the view.
+        
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.recipsTableView.reloadData()
     }
     
 
@@ -72,15 +85,54 @@ extension RciepsViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "ReciepsTableViewCell", for: indexPath) as? ReciepsTableViewCell)!
+       // let entity = NSEntityDescription.entity(forEntityName: "LocalRecips", in: managedContext)
+        
         cell.receipName.text = recipsArr?[indexPath.row].name
         cell.reciepHeadLine.text = recipsArr?[indexPath.row].headline
-       
-        if recipsArr?[indexPath.row].ratings != nil{
-            cell.reciepRatingLabel.text = "\(recipsArr?[indexPath.row].ratings ?? 0)"
+        cell.reciepRatingLabel.text = "\(recipsArr?[indexPath.row].ratings ?? 0)"
+        if cell.reciepRatingLabel.text == "0"{
+            cell.reciepRatingLabel.isHidden = true
+            cell.reciepGoldenButton.isHidden = true
+        }else {
             cell.reciepRatingLabel.isHidden = false
             cell.reciepGoldenButton.isHidden = false
         }
         cell.reciepTimeLabel.text = recipsArr?[indexPath.row].time
+        // save favourite button state
+        var favRecips = CoreDataManager.fetchFromCoreData()
+        for favRecip in favRecips {
+            if recipsArr?[indexPath.row].id == favRecip.id {
+                cell.addToFavouritsButton.isSelected = true
+                cell.addToFavouritsButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                break
+            } else {
+                cell.addToFavouritsButton.isSelected = false
+                cell.addToFavouritsButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+        }
+      
+        //COREDATA NEW
+        cell.favRecipe = { [unowned self] in
+            
+            if cell.addToFavouritsButton.isSelected == false{
+                cell.addToFavouritsButton.isSelected = true
+            }else {
+                cell.addToFavouritsButton.isSelected = false
+            }
+            if cell.addToFavouritsButton.isSelected {
+                
+                cell.addToFavouritsButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                
+                CoreDataManager.saveToCoreData ( ratings: recipsArr?[indexPath.row].ratings ?? 0, descriptione: (recipsArr?[indexPath.row].description)!, headline: (recipsArr?[indexPath.row].headline)!, id: (recipsArr?[indexPath.row].id)!, image: (recipsArr?[indexPath.row].image)!, name: (recipsArr?[indexPath.row].name)!, time: (recipsArr?[indexPath.row].time)!, ingredients: (recipsArr?[indexPath.row].ingredients)!)
+                    
+            } else {
+                cell.addToFavouritsButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                CoreDataManager.deleteFromCoreData(recipeID:  self.recipsArr![indexPath.row].id ?? "0")
+                
+                
+            }
+            
+        }
         
         
         
@@ -96,8 +148,10 @@ extension RciepsViewController : UITableViewDelegate , UITableViewDataSource {
         detailsVC.headlineTextViewHolder = self.recipsArr?[indexPath.row].headline
         detailsVC.timeLabelHolder = self.recipsArr?[indexPath.row].time
         detailsVC.descriptionTextViewHolder = self.recipsArr?[indexPath.row].description
-        detailsVC.ingrediantsTextViewHolder = self.recipsArr?[indexPath.row].ingredients.description
+        detailsVC.ingrediantsTextViewHolder = self.recipsArr?[indexPath.row].ingredients
         detailsVC.ratingLabelHolder = "\(recipsArr?[indexPath.row].ratings ?? 0)"
+        detailsVC.idHolder = self.recipsArr?[indexPath.row].id
+      
 
         self.navigationController?.pushViewController(detailsVC, animated: true)
     }
