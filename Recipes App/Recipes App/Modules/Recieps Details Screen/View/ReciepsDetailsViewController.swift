@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ReciepsDetailsViewController: UIViewController {
 
@@ -82,7 +83,7 @@ class ReciepsDetailsViewController: UIViewController {
         headlineTextView.text = self.headlineTextViewHolder
         descriptionTextView.text = self.headlineTextViewHolder
         ingrediantsTextView.text = self.ingrediantsTextViewHolder?.description
-        
+        recipImageView.kf.setImage(with: URL(string: self.recipImageViewHolder ?? "place"))
         
         // Do any additional setup after loading the view.
     }

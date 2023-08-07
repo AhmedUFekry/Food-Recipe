@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class FavouritsViewController: UIViewController {
 
     @IBOutlet weak var emptyFavImageView: UIImageView!
@@ -57,6 +57,7 @@ extension FavouritsViewController : UITableViewDelegate , UITableViewDataSource 
         cell.favName.text = favouritsArr?[indexPath.row].name
         cell.favHeadline.text = favouritsArr?[indexPath.row].headline
         cell.favRatelabel.text = "\(favouritsArr?[indexPath.row].ratings ?? 0)"
+        cell.favImage.kf.setImage(with: URL(string: favouritsArr?[indexPath.row].image ?? "place"))
         if cell.favRatelabel.text == "0"{
             cell.favRatelabel.isHidden = true
             cell.favGoldenStar.isHidden = true

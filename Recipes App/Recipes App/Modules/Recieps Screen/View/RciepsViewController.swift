@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Kingfisher
 //import CoreDataManager.swift
 
 class RciepsViewController: UIViewController  {
@@ -89,6 +90,7 @@ extension RciepsViewController : UITableViewDelegate , UITableViewDataSource {
        // let entity = NSEntityDescription.entity(forEntityName: "LocalRecips", in: managedContext)
         
         cell.receipName.text = recipsArr?[indexPath.row].name
+        cell.reciepImage.kf.setImage(with: URL(string: recipsArr?[indexPath.row].image ?? "place"))
         cell.reciepHeadLine.text = recipsArr?[indexPath.row].headline
         cell.reciepRatingLabel.text = "\(recipsArr?[indexPath.row].ratings ?? 0)"
         if cell.reciepRatingLabel.text == "0"{
@@ -156,6 +158,7 @@ extension RciepsViewController : UITableViewDelegate , UITableViewDataSource {
         detailsVC.ingrediantsTextViewHolder = self.recipsArr?[indexPath.row].ingredients
         detailsVC.ratingLabelHolder = "\(recipsArr?[indexPath.row].ratings ?? 0)"
         detailsVC.idHolder = self.recipsArr?[indexPath.row].id
+        detailsVC.recipImageViewHolder = self.recipsArr?[indexPath.row].image
       
 
         self.navigationController?.pushViewController(detailsVC, animated: true)
