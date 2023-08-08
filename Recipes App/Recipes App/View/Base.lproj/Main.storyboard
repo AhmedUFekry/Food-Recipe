@@ -252,18 +252,40 @@
                                     <action selector="favouritsButton:" destination="D6v-Ci-95U" eventType="touchUpInside" id="rNn-qq-9Kg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A75-Ri-yHt">
+                                <rect key="frame" x="16" y="120" width="95" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="person.crop.circle.badge.checkmark.fill" catalog="system">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Logout">
+                                            <attributes>
+                                                <font key="NSFont" size="13" name="AmericanTypewriter-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutButton:" destination="D6v-Ci-95U" eventType="touchUpInside" id="lna-dX-fYP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ddy-wm-7hh"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RHZ-7g-LDj" firstAttribute="trailing" secondItem="P3Y-R9-Kwb" secondAttribute="trailingMargin" id="2nR-qL-SEP"/>
+                            <constraint firstItem="Ui7-k1-G4s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="A75-Ri-yHt" secondAttribute="trailing" constant="8" symbolic="YES" id="30i-ck-EjS"/>
                             <constraint firstItem="RHZ-7g-LDj" firstAttribute="top" secondItem="Ui7-k1-G4s" secondAttribute="bottom" constant="27" id="85c-Sv-PMh"/>
                             <constraint firstItem="Ui7-k1-G4s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ddy-wm-7hh" secondAttribute="leading" id="8RM-Mb-ITt"/>
                             <constraint firstItem="RHZ-7g-LDj" firstAttribute="leading" secondItem="P3Y-R9-Kwb" secondAttribute="leadingMargin" id="EhY-b6-0gi"/>
                             <constraint firstItem="RHZ-7g-LDj" firstAttribute="bottom" secondItem="ddy-wm-7hh" secondAttribute="bottom" id="WSh-dY-VxQ"/>
                             <constraint firstItem="Ui7-k1-G4s" firstAttribute="top" secondItem="ddy-wm-7hh" secondAttribute="top" constant="51" id="eHW-PF-2G9"/>
+                            <constraint firstItem="A75-Ri-yHt" firstAttribute="leading" secondItem="RHZ-7g-LDj" secondAttribute="leading" id="fQF-L9-IHd"/>
+                            <constraint firstItem="A75-Ri-yHt" firstAttribute="top" secondItem="ddy-wm-7hh" secondAttribute="top" constant="61" id="fcf-WZ-7MI"/>
                             <constraint firstAttribute="trailing" secondItem="p0X-sn-Lf5" secondAttribute="trailing" id="gGR-NO-nA9"/>
                             <constraint firstItem="RHZ-7g-LDj" firstAttribute="top" secondItem="p0X-sn-Lf5" secondAttribute="bottom" constant="8" symbolic="YES" id="goH-xv-WWd"/>
+                            <constraint firstItem="A75-Ri-yHt" firstAttribute="baseline" secondItem="p0X-sn-Lf5" secondAttribute="firstBaseline" id="j8q-iw-j2X"/>
                             <constraint firstItem="Ui7-k1-G4s" firstAttribute="centerX" secondItem="ddy-wm-7hh" secondAttribute="centerX" constant="6.5" id="rrV-uh-NAU"/>
                             <constraint firstItem="p0X-sn-Lf5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ui7-k1-G4s" secondAttribute="trailing" id="xTK-Sf-7yE"/>
                         </constraints>
@@ -643,6 +665,7 @@
     <resources>
         <image name="fav" width="200" height="200"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="person.crop.circle.badge.checkmark.fill" catalog="system" width="128" height="114"/>
         <image name="place" width="1080" height="720"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="timer" catalog="system" width="128" height="123"/>

@@ -16,14 +16,19 @@ class ViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         
         
-        var userName = userName.text ?? "username"
-        var password = password.text ?? "password"
-        var authenticated = verifyUser(userName: userName, password: password)
+        let userName = userName.text ?? "username"
+        let password = password.text ?? "password"
+        let authenticated = verifyUser(userName: userName, password: password)
         if authenticated {
-            let RciepsVC = self.storyboard?.instantiateViewController(withIdentifier: "RciepsViewController") as! RciepsViewController
-            
-            self.navigationController?.pushViewController(RciepsVC, animated: true)
+            let loginStatus = 1
+            UserDefaults.standard.set(loginStatus, forKey: "loginStatus")
+            let Login = self.storyboard?.instantiateViewController(withIdentifier: "RciepsViewController") as! RciepsViewController
+            let navigationController = UINavigationController(rootViewController: Login)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true)
         }else{
+            let loginStatus = 0
+            UserDefaults.standard.set(loginStatus, forKey: "loginStatus")
             self.showToast(message: "uncorrect mail or password ", seconds: 2.0)
             
         }

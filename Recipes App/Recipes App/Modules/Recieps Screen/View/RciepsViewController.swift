@@ -16,8 +16,12 @@ class RciepsViewController: UIViewController  {
     @IBOutlet weak var recipsTableView: UITableView!
     
     @IBAction func logoutButton(_ sender: Any) {
-        
-        
+        let loginStatus = 0
+        UserDefaults.standard.set(loginStatus, forKey: "loginStatus")
+        let logOut = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let navigationController = UINavigationController(rootViewController: logOut)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
     }
     
     @IBAction func favouritsButton(_ sender: Any) {
