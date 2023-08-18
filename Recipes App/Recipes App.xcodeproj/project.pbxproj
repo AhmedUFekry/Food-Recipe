@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4B1DB82A9C058B0018AB0C /* Mocking Recipes Network  service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B1DB72A9C058B0018AB0C /* Mocking Recipes Network  service.swift */; };
 		AB6B2B542A7DB7120070F474 /* RciepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B532A7DB7120070F474 /* RciepsViewController.swift */; };
 		AB6B2B562A7DBEC20070F474 /* ReciepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B552A7DBEC20070F474 /* ReciepsTableViewCell.swift */; };
 		AB6B2B5C2A7EC7980070F474 /* ReciepsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2B5B2A7EC7980070F474 /* ReciepsDetailsViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB4B1DB72A9C058B0018AB0C /* Mocking Recipes Network  service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mocking Recipes Network  service.swift"; sourceTree = "<group>"; };
 		AB6B2B532A7DB7120070F474 /* RciepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RciepsViewController.swift; sourceTree = "<group>"; };
 		AB6B2B552A7DBEC20070F474 /* ReciepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciepsTableViewCell.swift; sourceTree = "<group>"; };
 		AB6B2B5B2A7EC7980070F474 /* ReciepsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciepsDetailsViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				ABE55FC72A7BE939000918EB /* Recipes_AppTests.swift */,
+				AB4B1DB72A9C058B0018AB0C /* Mocking Recipes Network  service.swift */,
 			);
 			path = "Recipes AppTests";
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABE55FC82A7BE939000918EB /* Recipes_AppTests.swift in Sources */,
+				AB4B1DB82A9C058B0018AB0C /* Mocking Recipes Network  service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

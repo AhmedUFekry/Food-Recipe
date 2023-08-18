@@ -11,7 +11,6 @@ import XCTest
 final class Recipes_AppTests: XCTestCase {
 
     let recipesList = RecipsViewModel()
-    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -38,6 +37,19 @@ final class Recipes_AppTests: XCTestCase {
         }
         waitForExpectations(timeout: 10)
               
+    }
+    
+    
+    func testMockingFromApi(){
+        MockingNetworkManager(connected: true)
+        MockingNetworkManager.getRecips(apiUrl: "") { data in
+            if let response : [Recips] = data {
+                XCTAssertNotNil(response)
+            }else{
+                XCTFail()
+            }
+        }
+        
     }
 
     
