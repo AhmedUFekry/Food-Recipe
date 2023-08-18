@@ -41,7 +41,8 @@ class RciepsViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         recipsViewModelObject = RecipsViewModel()
-        recipsViewModelObject?.getAllRecips()
+        let recipsUrl = "https://api.npoint.io/43427003d33f1f6b51cc"
+        recipsViewModelObject?.getAllRecips(url: recipsUrl)
         recipsViewModelObject?.bindingRecips = { [self] in
             
             recipsArr = recipsViewModelObject?.ObservableRecips
@@ -54,7 +55,7 @@ class RciepsViewController: UIViewController  {
             
         }
         
-        recipsViewModelObject?.getAllRecips()
+        recipsViewModelObject?.getAllRecips(url: recipsUrl)
         
 
         

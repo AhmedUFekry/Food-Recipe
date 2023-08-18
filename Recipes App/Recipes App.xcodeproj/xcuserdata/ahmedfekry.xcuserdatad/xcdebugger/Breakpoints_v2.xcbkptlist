@@ -3,4 +3,54 @@
    uuid = "5C9AABA5-1586-4A33-877B-A0E7F502C8CA"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA98870B-1E41-4EC3-891B-E87E8546159A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recipes AppTests/Recipes_AppTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "testNetworkManager()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AA98870B-1E41-4EC3-891B-E87E8546159A - 5a0095fcf19f2de1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recipes_AppTests.Recipes_AppTests.testNetworkManager() -&gt; ()"
+                  moduleName = "Recipes AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedfekry/Documents/GitHub/BrightSkies/Recipes%20App/Recipes%20AppTests/Recipes_AppTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "AA98870B-1E41-4EC3-891B-E87E8546159A - 5a0095fcf19f2de1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recipes_AppTests.Recipes_AppTests.testNetworkManager() -&gt; ()"
+                  moduleName = "Recipes AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedfekry/Documents/GitHub/BrightSkies/Recipes%20App/Recipes%20AppTests/Recipes_AppTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "42">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
