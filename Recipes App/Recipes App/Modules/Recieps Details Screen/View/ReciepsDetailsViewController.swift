@@ -82,7 +82,12 @@ class ReciepsDetailsViewController: UIViewController {
         timeLabel.text = self.timeLabelHolder
         headlineTextView.text = self.headlineTextViewHolder
         descriptionTextView.text = self.headlineTextViewHolder
-        ingrediantsTextView.text = self.ingrediantsTextViewHolder?.description
+        var ingrediants : String = ""
+        for item in ingrediantsTextViewHolder! {
+            ingrediants += " - \(item) \n"
+            
+        }
+        ingrediantsTextView.text = ingrediants
         recipImageView.kf.setImage(with: URL(string: self.recipImageViewHolder ?? "place"))
         
         // Do any additional setup after loading the view.
